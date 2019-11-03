@@ -24,7 +24,19 @@ class App extends Component {
 		}
 	}
 
-	
+	ponerFilas = () => this.state.usuarios.map((usuario) => (
+		<tr>
+			<td>
+				{ usuario.nombre }
+			</td>
+			<td>
+				{ usuario.correo }
+			</td>
+			<td>
+				{ usuario.enlace }
+			</td>
+		</tr>
+	));
 
 	render() {
 		return (
