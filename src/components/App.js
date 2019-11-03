@@ -41,7 +41,24 @@ class App extends Component {
 	render() {
 		return (
 			<div className="margen">
-				
+				<table className="tabla">
+					<thead>
+						<tr>
+							<th>
+								Nombre
+							</th>
+							<th>
+								Correo
+							</th>
+							<th>
+								Enlace
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						{ this.ponerFilas() }
+					</tbody>
+				</table>
 			</div>
 		)
 	}
