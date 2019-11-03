@@ -18,3 +18,11 @@
 	font-size: 20px;
 }
 
+#menu a {
+	color: white;
+	padding-right: 50px;
+}
+
+body {
+	margin: 0;
+}
