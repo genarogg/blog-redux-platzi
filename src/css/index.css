@@ -1,5 +1,6 @@
-.margen {
+#margen {
 	margin: 100px;
+	margin-top: 50px;
 }
 
 .tabla {
@@ -25,4 +26,12 @@
 
 body {
 	margin: 0;
+}
+
+.center {
+	text-align: center;
+}
+
+.rojo {
+	color: red;
 }
