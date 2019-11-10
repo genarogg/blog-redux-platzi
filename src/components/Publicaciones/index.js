@@ -1,37 +1,23 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import axios from 'axios';
+import { TRAER_TODOS, CARGANDO, ERROR } from '../types/publicacionesTypes';
 
-import * as usuariosActions from '../../actions/usuariosActions';
-import * as publicacionesActions from '../../actions/publicacionesActions';
+export const traerTodos = () => async (dispatch) => {
+	dispatch({
+		type: CARGANDO
+	});
 
-class Publicaciones extends Component {
-
-	componentDidMount() {
-		if (!this.props.usuariosReducer.usuarios.length) {
-			this.props.traerTodos();
-		}
+	try {
+		const respuesta = await axios.get('https://jsonplaceholder.typicode.com/posts');
+		dispatch({
+			type: TRAER_TODOS,
+			payload: respuesta.data
+		})
 	}
-
-	render() {
-		console.log(this.props);
-		return (
-			<div>
-				<h1>
-					Publicaciones de 
-				</h1>
-				{ this.props.match.params.key }
-			</div>
-		);
+	catch (error) {
+		console.log(error.message);
+		dispatch({
+			type: ERROR,
+			payload: 'Algo salió mal, intente más tarde.'
+		})
 	}
-}
-
-const mapStateToProps = ({ usuariosReducer, publicacionesReducer }) => {
-	return { usuariosReducer, publicacionesReducer };
 };
-
-const mapDispatchToProps = {
-	...usuariosActions,
-	...publicacionesActions
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Publicaciones);
