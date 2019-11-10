@@ -1,23 +1,41 @@
-import axios from 'axios';
-import { TRAER_TODOS, CARGANDO, ERROR } from '../types/publicacionesTypes';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export const traerTodos = () => async (dispatch) => {
-	dispatch({
-		type: CARGANDO
-	});
+import * as usuariosActions from '../../actions/usuariosActions';
+import * as publicacionesActions from '../../actions/publicacionesActions';
 
-	try {
-		const respuesta = await axios.get('https://jsonplaceholder.typicode.com/posts');
-		dispatch({
-			type: TRAER_TODOS,
-			payload: respuesta.data
-		})
+const { traerTodos: usuariosTraerTodos } = usuariosActions;
+const { traerPorUsuario: publicacionesTraerPorUsuario } = publicacionesActions;
+
+class Publicaciones extends Component {
+
+	async componentDidMount() {
+		if (!this.props.usuariosReducer.usuarios.length) {
+			await this.props.usuariosTraerTodos();
+		}
+		this.props.publicacionesTraerPorUsuario(this.props.match.params.key);
 	}
-	catch (error) {
-		console.log(error.message);
-		dispatch({
-			type: ERROR,
-			payload: 'Algo salió mal, intente más tarde.'
-		})
+
+	render() {
+		console.log(this.props);
+		return (
+			<div>
+				<h1>
+					Publicaciones de 
+				</h1>
+				{ this.props.match.params.key }
+			</div>
+		);
 	}
+}
+
+const mapStateToProps = ({ usuariosReducer, publicacionesReducer }) => {
+	return { usuariosReducer, publicacionesReducer };
 };
+
+const mapDispatchToProps = {
+	usuariosTraerTodos,
+	publicacionesTraerPorUsuario
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Publicaciones);
