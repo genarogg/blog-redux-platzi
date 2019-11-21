@@ -1,3 +1,6 @@
-export const TRAER_TODOS = 'usuarios_traer_todos';
-export const CARGANDO = 'usuarios_cargando';
-export const ERROR = 'usuarios_error';
+export const CARGANDO = 'publicaciones_cargando';
+export const ERROR = 'publicaciones_error';
+export const ACTUALIZAR = 'publicaciones_actualizar';
+export const COM_CARGANDO = 'comentarios_cargando';
+export const COM_ERROR = 'comentarios_error';
+export const COM_ACTUALIZAR = 'comentarios_actualizar';
