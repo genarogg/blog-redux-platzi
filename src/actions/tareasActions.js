@@ -4,7 +4,8 @@ import {
 	CARGANDO,
 	ERROR,
 	CAMBIO_USUARIO,
-	CAMBIO_TITULO
+	CAMBIO_TITULO,
+	AGREGADA
 } from '../types/tareasTypes';
 
 export const traerTodas = () => async (dispatch) => {
@@ -59,15 +60,16 @@ export const agregar = (nueva_tarea) => async (dispatch) => {
 	});
 
 	try {
-		const respuesta = await axios.post('https://jsonplaceholder.typicode.com/todos', nueva_tarea);
+		await axios.post('https://jsonplaceholder.typicode.com/todos', nueva_tarea);
 		dispatch({
-			type: 'agregada'
+			type: AGREGADA
 		});
 	}
 	catch (error) {
 		console.log(error.message);
 		dispatch({
-			type: ERROR
+			type: ERROR,
+			payload: 'Servicio no disponible en este momento.'
 		});
 	}
 };
