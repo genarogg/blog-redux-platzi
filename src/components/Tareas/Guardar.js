@@ -12,13 +12,17 @@ class Guardar extends Component {
 			match: { params: { usu_id, tar_id } },
 			tareas,
 			cambioUsuarioId,
-			cambioTitulo
+			cambioTitulo,
+			limpiarForma
 		} = this.props;
 
 		if (usu_id && tar_id) {
 			const tarea = tareas[usu_id][tar_id];
 			cambioUsuarioId(tarea.userId);
 			cambioTitulo(tarea.title);
+		}
+		else {
+			limpiarForma();
 		}
 	}
 
