@@ -28,7 +28,7 @@ class Usuarios extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="container-color">
 				<h1>Usuarios</h1>
 				{ this.ponerContenido() }
 			</div>

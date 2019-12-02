@@ -9,7 +9,7 @@ const Tabla = (props) => {
 			<td>
 				{ usuario.name }
 			</td>
-			<td>
+			<td className="hidden">
 				{ usuario.email }
 			</td>
 			<td>
@@ -30,12 +30,13 @@ const Tabla = (props) => {
 					<th>
 						Nombre
 					</th>
-					<th>
+					<th className="hidden">
 						Correo
 					</th>
 					<th>
 						Enlace
 					</th>
+					<th>ver</th>
 				</tr>
 			</thead>
 			<tbody>

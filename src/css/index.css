@@ -1,6 +1,46 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	/* width: 100%; */
+
+}
 #margen {
 	margin: 100px;
 	margin-top: 50px;
+}
+
+.container-color{
+    border: 1px solid #fff;
+    /* margin-bottom: 3%; */
+    padding: 12px;
+    color: #fff;
+	background-color: #333;
+	transition: 600ms ease all;
+	width: 100%;
+	margin: 0 auto;
+
+}
+.container-color:hover{
+	border: 1px solid rgb(52, 152, 219);
+	transition: 600ms ease all;
+	border-radius: 8px;
+}
+
+.container-color:hover h1{
+	box-shadow: 0px 2px 0px 0px rgb(52, 152, 219, .7);
+	transition: 600ms ease all;
+}
+
+h1{
+	box-shadow: 0px 2px 0px 0px rgb(255, 255, 255);
+	transition: 600ms ease all;
+}
+
+th{
+	padding: 5px;
+    padding-left: 7px;
+    background-color: #282828;
 }
 
 .tabla {
@@ -10,22 +50,39 @@
 
 .tabla td {
 	padding-top: 10px;
-	padding-bottom: 10px;
+    /* background-color: #424242; */
+    padding: 11px;
+    padding-right: 10px;
+    padding-left: 8px;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
+/* tbody tr :nth-child(2n+1) {
+	
+    background-color: #4e4e4e;
+    
+} */
+tr:hover{
+	background-color: #4e4e4e;
+}
 #menu {
-	background-color: #253A46;
+	background-color: #3498db;
 	padding: 20px;
 	font-size: 20px;
+	padding-left: 40%;
 }
 
 #menu a {
 	color: white;
-	padding-right: 50px;
+	padding-right: 15%;
+	text-decoration: 1px solid transparent;
+	
 }
 
 body {
 	margin: 0;
+	background-color: #282828;
 }
 
 .center {
@@ -53,4 +110,80 @@ li {
 
 .m_left {
 	margin-left: 20px;
+}
+
+.hidden{
+	display: block;
+}
+
+
+h1, h2, h3 , p, ul *{
+	color: #fff;
+	margin-bottom: 5%;
+}
+
+h2{
+	color: #3498db
+}
+
+u{
+	color:#afa;
+}
+
+li br {
+	margin-bottom: 5%;
+}
+
+button{
+	border: 1px solid #fff;
+	padding: 0 3%;
+}
+
+button a{
+	font-size: 14px;
+	color: #3498db;
+	text-decoration: none;
+}
+
+#margen > div > div > div > div{
+	color:#fff
+}
+
+#margen > div > button{
+	margin-bottom: 3%;
+}
+
+
+/* input [type="number"]{
+	position: absolute;
+    left: 250px;
+} */
+
+
+@media only screen and (max-width: 600px) {
+	#margen {
+		margin: 4%;
+		margin-top: 2%;
+	}
+
+	.hidden{
+		display: none;
+	}
+
+	#menu {
+		
+		font-size: 16px;
+		padding-left: 32%;
+	}
+
+	h1{
+		font-size: 24px;
+		text-align: center;
+		margin-bottom: 15px;
+	}
+
+	/* input{
+		position: absolute;
+		right: 60px;
+	} */
 }

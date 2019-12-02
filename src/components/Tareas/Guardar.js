@@ -87,7 +87,7 @@ class Guardar extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="container-color">
 				{
 					(this.props.regresar) ?
 					<Redirect to='/tareas' />

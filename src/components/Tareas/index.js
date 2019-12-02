@@ -31,7 +31,7 @@ class Tareas extends Component {
 		}
 
 		return Object.keys(tareas).map((usu_id) => (
-			<div key={ usu_id }>
+			<div className="container-color" key={ usu_id }>
 				<h2>Usuario { usu_id }</h2>
 				<div className='contenedor_tareas'>
 					{ this.ponerTareas(usu_id) }
